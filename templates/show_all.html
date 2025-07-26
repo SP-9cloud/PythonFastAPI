@@ -1,0 +1,34 @@
+<html>
+    <body>
+        {% with messages= get_flashed_messages() %}
+            {% if messages %}
+            <ul>
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        {% endwith %}
+         <p><a href="{{ url_for('addmodelrecord')}}"><b>Add Record </b></a></p>
+            <table border="1">
+                <thead>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>City</th>
+                    <th>Pincode</th>
+                    <th>Edit</th>
+                    <th>Remove</th>
+                </thead>
+                {% for student in students %}
+                <tr>
+                    <td>{{ student.name }}</td>
+                    <td>{{ student.addr }}</td>
+                    <td>{{ student.city }}</td>
+                    <td>{{ student.pin }}</td>
+                    <td><a href="http://127.0.0.1:5000/updatemodelrecord/{{ student.student_id }}"><b>Update</b></a></td>
+                    <td><a href="http://127.0.0.1:5000/deletemodelrecord/{{ student.student_id }}"><b>Delete</b></a></td>
+                {% endfor %}
+                </tr>
+            </table>
+    </body>
+</html>

@@ -1,0 +1,14 @@
+<html>
+    <body>
+        {% if error %}
+            <p><strong>Error: </strong> {{ error }}</p>
+        {% endif%}
+        <form action="http://127.0.0.1:5000/login" method="post">
+            <p>Enter Username:</p>
+            <input name="username" type="text">
+            <p>Enter Password:</p>
+            <input name="password" type="password"><br><br>
+            <button type="submit" name=""submitBtn>Login</button>
+        </form>
+    </body>
+</html>
