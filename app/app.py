@@ -25,6 +25,6 @@ def log_request_task(background_tasks: BackgroundTasks = None):
     background_tasks.add_task(log_request_time)
     return {"message": f"Request logged" }
 
-if __name__ == "__main__": #this is for DB
-    import uvicorn
-    uvicorn.run("app.app:app", host="0.0.0.0", port=8000, reload=True)
+#if __name__ == "__main__": #this is for DB
+#    import uvicorn
+#    uvicorn.run("app.app:app", host="0.0.0.0", port=8000, reload=True)
